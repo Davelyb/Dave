@@ -21,6 +21,9 @@ from django.utils import timezone
 import datetime
 
 
+# test test test
+
+
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
@@ -99,7 +102,7 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         return render(request, 'polls/detail.html', {
                 'question': question,
-                'error_message': "还没选中选项哦！"
+                'error_message': "你还没有选中任何选项！"
         })
     else:
         selected_choice.votes += 1
